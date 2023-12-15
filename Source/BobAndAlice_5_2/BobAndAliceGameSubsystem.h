@@ -16,4 +16,19 @@ public:
 
   virtual void Deinitialize() override;
 
+  UFUNCTION(BlueprintCallable)
+  void SaveTimerToSubSystem(const float TimeLimit);
+
+  UFUNCTION(BlueprintCallable,BlueprintPure)
+  float GetLocalSavedTimer() const;
+
+  UFUNCTION(BlueprintCallable)
+  void SavePackageCollectedToSubSystem(const bool PackageCollected);
+
+  UFUNCTION(BlueprintCallable,BlueprintPure)
+  bool GetLocalPackageCollected() const;
+
+private:
+  float LocalTimer = 45;
+  bool LocalPackageCollected = false;
 };
